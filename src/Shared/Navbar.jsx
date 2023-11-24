@@ -8,7 +8,7 @@ const Navbar = () => {
         <li  className="m-4"><NavLink to="/teachonlearnbd">TEACH ON LEARNBD</NavLink></li>
     </>
     return (
-        <div className="navbar fixed z-10 bg-opacity-20 max-w-screen-xl bg-black text-white ">
+        <div className="navbar fixed z-10  max-w-screen-xl bg-black text-white ">
         <div className="md:navbar-start navbar-center">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
