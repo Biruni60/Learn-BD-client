@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 const SignUp = () => {
     const axiosPublic=useAxiosPublic()
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const { createUser, updateUser  } = useContext(AuthContext);
     const navigate = useNavigate();
     const onSubmit = data => {
 
@@ -18,7 +18,7 @@ const SignUp = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                updateUserProfile(data.name, data.photoURL)
+                updateUser(data.name, data.photoURL)
                     .then(() => {
                         // create user entry in the database
                         const userInfo = {

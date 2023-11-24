@@ -6,8 +6,10 @@ import { useContext } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "./AuthProvider";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
 const SingIn = () => {
     const {googleSignIn,logIn}=useContext(AuthContext);
+    const axiosPublic=useAxiosPublic()
     const location=useLocation()
     const navigate=useNavigate()
     const handleLogin=e=>{
@@ -28,9 +30,23 @@ const SingIn = () => {
     const handlegoogle=()=>{
         googleSignIn()
         .then(result=>{
-            console.log(result.user);
-            toast("user created successfully")
-            navigate(location.state? location.state:"/")
+            console.log(result);
+            const userInfo = {
+              name: result.user.displayName,
+              email: result.user.email
+          }
+          axiosPublic.post('/users', userInfo)
+              .then(res => {
+                console.log(res);
+                  if (res.data.insertedId) {
+                      console.log('user added to the database')
+                     
+                     toast("User LoggedIn Succesfully")
+                     navigate(location.state? location.state:"/")
+                  }
+                  
+              })
+           
         })
         .catch(error=>toast(error.message))}
     return (
