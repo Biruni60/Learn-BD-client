@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 
 
+
 const Home = () => {
     
     return (
@@ -8,8 +9,8 @@ const Home = () => {
         <Helmet prioritizeSeoTags>
         <title>LEARNBD | HOME</title>
         </Helmet>
-        <div>
-            
+        <div className=" p-40">
+          
         </div>
      </>
     );

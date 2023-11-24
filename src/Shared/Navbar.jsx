@@ -1,12 +1,21 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css"
+import { useContext } from "react";
+import { AuthContext } from "../USER/AuthProvider";
 
 const Navbar = () => {
+  const {user,logOut}=useContext(AuthContext)
+   console.log(user?.photoURL
+    );
     const navLinks=<>
         <li className="m-4"><NavLink to="/">HOME</NavLink></li>
         <li  className="m-4"><NavLink to="/allclasses">ALL CLASSES</NavLink></li>
         <li  className="m-4"><NavLink to="/teachonlearnbd">TEACH ON LEARNBD</NavLink></li>
     </>
+    const handleLogOut=()=>{
+  logOut()
+  
+    }
     return (
         <div className="navbar fixed z-10  max-w-screen-xl bg-black text-white ">
         <div className="md:navbar-start navbar-center">
@@ -33,7 +42,29 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-         <Link to="signin"><button className="btn btn-outline text-lime-600">SIGN IN</button></Link>
+         {
+          user?
+         <div>
+            {/* Open the modal using document.getElementById('ID').showModal() method */}
+<button  onClick={()=>document.getElementById('my_modal_1').showModal()}><img className="w-20 rounded-full" src={user?.photoURL
+}/></button>
+<dialog id="my_modal_1" className="modal">
+  <div className="modal-box">
+    <h2 className="text-lime-600">{user?.displayName}</h2>
+    <Link className="text-lime-600 text-xl" to="/dashboard">Dash Board</Link>
+    <div className="modal-action  justify-center">
+      <form method="dialog">
+        {/* if there is a button in form, it will close the modal */}
+        <button onClick={handleLogOut} className="btn bg-lime-600 text-white text-xl mr-2">Log Out</button>
+        <button className="btn bg-lime-600 text-white text-xl ml-2">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+         </div>
+          :
+          <Link to="signin"><button className="btn btn-outline text-lime-600">SIGN IN</button></Link>
+         }
         </div>
       </div>
     );

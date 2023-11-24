@@ -6,6 +6,7 @@ import ErrorPage from "../Error/ErrorPage";
 import Home from "../Home/HomeComponents/Home";
 import SingIn from "../USER/SingIn";
 import SignUp from "../USER/SignUp";
+import DashBoard from "../DashBoard/DashBoard";
 
 export const router = createBrowserRouter([
     {
@@ -27,5 +28,14 @@ export const router = createBrowserRouter([
         }
       ]
     },
+    {
+      path:"dashboard",
+      element:<DashBoard></DashBoard>,
+      children:[
+        {
+          
+        }
+      ]
+    }
   ]);
   

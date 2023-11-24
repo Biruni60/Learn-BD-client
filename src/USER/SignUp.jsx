@@ -23,7 +23,10 @@ const SignUp = () => {
                         // create user entry in the database
                         const userInfo = {
                             name: data.name,
-                            email: data.email
+                            email: data.email,
+                            photoURL:data.photoURL,
+                            phoneNumber:data.mobile,
+                            role:"admin"
                         }
                         axiosPublic.post('/users', userInfo)
                             .then(res => {
@@ -68,6 +71,13 @@ const SignUp = () => {
                                 </label>
                                 <input type="text"  {...register("photoURL", { required: true })} placeholder="Photo URL" className="input input-bordered" />
                                 {errors.photoURL && <span className="text-red-600">Photo URL is required</span>}
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Mobile Number</span>
+                                </label>
+                                <input type="text"  {...register("mobile", { required: true })} placeholder="mobile number" className="input input-bordered" />
+                                {errors.photoURL && <span className="text-red-600">Mobile Number is required</span>}
                             </div>
                             <div className="form-control">
                                 <label className="label">

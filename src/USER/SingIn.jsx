@@ -33,7 +33,10 @@ const SingIn = () => {
             console.log(result);
             const userInfo = {
               name: result.user.displayName,
-              email: result.user.email
+              email: result.user.email,
+              photoURl:result.user.photoURl,
+              phoneNumber:result.user.phoneNumber,
+              role:"student"
           }
           axiosPublic.post('/users', userInfo)
               .then(res => {
