@@ -2,11 +2,14 @@ import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css"
 import { useContext } from "react";
 import { AuthContext } from "../USER/AuthProvider";
+import useAdmin from "../Hooks/useAdmin";
+import useTeacher from "../Hooks/useTeacher";
 
 const Navbar = () => {
   const {user,logOut}=useContext(AuthContext)
-   console.log(user?.photoURL
-    );
+  const [isAdmin]=useAdmin()
+  const [isTeacher]=useTeacher()
+  console.log(isAdmin,isTeacher);
     const navLinks=<>
         <li className="m-4"><NavLink to="/">HOME</NavLink></li>
         <li  className="m-4"><NavLink to="/allclasses">ALL CLASSES</NavLink></li>
@@ -51,7 +54,15 @@ const Navbar = () => {
 <dialog id="my_modal_1" className="modal">
   <div className="modal-box">
     <h2 className="text-lime-600">{user?.displayName}</h2>
-    <Link className="text-lime-600 text-xl" to="/dashboard">Dash Board</Link>
+        {
+            user && isAdmin && <h2 className="text-lime-600"><Link to="/dashboard/adminhome">Dashboard</Link></h2>
+        }
+        {
+            user && isTeacher && <h2 className="text-lime-600"><Link to="/dashboard/teacherhome">Dashboard</Link></h2>
+        }
+        {
+            user && !isAdmin && !isAdmin && <h2 className="text-lime-600"><Link to="/dashboard/studenthome">Dashboard</Link></h2>
+        }
     <div className="modal-action  justify-center">
       <form method="dialog">
         {/* if there is a button in form, it will close the modal */}

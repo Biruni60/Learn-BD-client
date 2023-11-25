@@ -8,9 +8,10 @@ import { CgProfile } from "react-icons/cg"
 import { MdOutlineAssignmentReturned, MdOutlineBookmarkAdded } from "react-icons/md"
 import { MdAddTask } from "react-icons/md"
 const DashBoard = () => {
-     const isAdmin=useAdmin()
-     const isTeacher=useTeacher()
- 
+     const [isAdmin]=useAdmin()
+     const [isTeacher]=useTeacher()
+     
+     console.log(isAdmin);
     return (
         <div className="drawer lg:drawer-open  max-w-screen-xl mx-auto ">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
