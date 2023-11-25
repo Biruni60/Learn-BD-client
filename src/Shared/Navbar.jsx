@@ -61,7 +61,7 @@ const Navbar = () => {
             user && isTeacher && <h2 className="text-lime-600"><Link to="/dashboard/teacherhome">Dashboard</Link></h2>
         }
         {
-            user && !isAdmin && !isAdmin && <h2 className="text-lime-600"><Link to="/dashboard/studenthome">Dashboard</Link></h2>
+            user && !isAdmin && !isTeacher && <h2 className="text-lime-600"><Link to="/dashboard/studenthome">Dashboard</Link></h2>
         }
     <div className="modal-action  justify-center">
       <form method="dialog">

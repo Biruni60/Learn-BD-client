@@ -14,7 +14,7 @@ import TeacharHome from "../DashBoard/TeacharDashBoard/TeacharHome";
 import AddClass from "../DashBoard/TeacharDashBoard/AddClass";
 import MyClass from "../DashBoard/TeacharDashBoard/MyClass";
 import AdminHome from "../DashBoard/AdminDashBoard/AdminHome";
-import AllUsers from "../DashBoard/AdminDashBoard/AllUsers";
+import AllUsers from "../DashBoard/AdminDashBoard/AllUsers/AllUsers";
 import TeacherRequest from "../DashBoard/AdminDashBoard/TeacherRequest";
 
 export const router = createBrowserRouter([
