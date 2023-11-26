@@ -44,6 +44,12 @@ const DashBoard = () => {
                         </NavLink>
                     </li>
                     <li>
+                        <NavLink to="/dashboard/adminclasses" >
+                        <MdOutlineBookmarkAdded/>
+                        All Classes
+                        </NavLink>
+                    </li>
+                    <li>
                         <NavLink to="/dashboard/allusers" >
                         <FaRegUser />
                         All Users
@@ -105,6 +111,11 @@ const DashBoard = () => {
                     </li>
                 </>
             }
+            <div className="divider divider-neutral"></div>
+            <li> <NavLink to="/" className="flex">
+                        <FaHome></FaHome>
+                         Home Page
+                        </NavLink></li>
           </ul>
         
         </div>

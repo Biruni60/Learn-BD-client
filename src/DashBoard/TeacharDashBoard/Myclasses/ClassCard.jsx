@@ -7,10 +7,11 @@ const ClassCard = ({classItem,refetch}) => {
     const {_id,title,price,description,image,isPending,name,email}=classItem
     const [disable,setdisable]=useState(true);
     const axiosSecure=useAxiosSecure()
-    const isAccepted= isPending==="accepted"
-    if(isAccepted){
-        setdisable(false)
-    }
+    useEffect(() => {
+        if (isPending === "accepted") {
+          setdisable(false);
+        }
+      }, [isPending]);
     const handleDeleteItem = (item) => {
         Swal.fire({
             title: "Are you sure?",

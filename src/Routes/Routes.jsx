@@ -19,6 +19,7 @@ import TeacherRequest from "../DashBoard/AdminDashBoard/TeacherRequest";
 import MyClass from "../DashBoard/TeacharDashBoard/Myclasses/MyClass";
 import UpdateClass from "../DashBoard/TeacharDashBoard/Myclasses/UpdateClass";
 import SeeDetails from "../DashBoard/TeacharDashBoard/Myclasses/SeeDetails/SeeDetails";
+import AdminClasses from "../DashBoard/AdminDashBoard/AdminClasses/AdminClasses";
 
 export const router = createBrowserRouter([
     {
@@ -101,6 +102,10 @@ export const router = createBrowserRouter([
       {
         path:"/dashboard/adminProfile",
         element:<UserProfile></UserProfile>
+      },
+      {
+        path:"/dashboard/adminclasses",
+        element:<AdminClasses></AdminClasses>
       },
       
       ]
