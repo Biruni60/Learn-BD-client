@@ -1,18 +1,22 @@
 import { useForm } from "react-hook-form";
-import useAxiosPublic from "../../Hooks/useAxiosPublic";
-import useAxiosSecure from "../../Hooks/useAxiosSecure";
-import SectionTitle from "../../Shared/SectionTitle";
+
 
 import { MdBookmarkAdded } from "react-icons/md";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useContext } from "react";
-import { AuthContext } from "../../USER/AuthProvider";
+
+import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { AuthContext } from "../../../USER/AuthProvider";
+import SectionTitle from "../../../Shared/SectionTitle";
 
 
 
-const AddClass = () => {
+const UpdateClass = () => {
     const { register, handleSubmit, reset } = useForm();
+    const {id} =useParams()
+   
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
     const {user}=useContext(AuthContext)
@@ -34,16 +38,17 @@ const AddClass = () => {
                 price:data.price,
                 description:data.description,
                 image:res.data.data.display_url,
-                isPending:"pending"
+               
             }
-            const classes=await axiosSecure.post('/classes',addClass)
-            if(classes.data.insertedId){
+            const classes=await axiosSecure.put(`/classes/${id}`,addClass)
+            console.log(classes);
+            if(classes.data.modifiedCount>0){
                 // show success popup
                 reset();
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: `${data.name} is added to the classes.`,
+                    title: `${data.name} is updates.`,
                     showConfirmButton: false,
                     timer: 1500
                   });
@@ -55,7 +60,7 @@ const AddClass = () => {
     return (
         <div>
              <div>
-        <SectionTitle title="ADD CLASS"></SectionTitle>
+        <SectionTitle title="UPDATE CLASS"></SectionTitle>
         <div className="border border-black rounded-xl py-10 px-4 my-10">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-control w-full my-6">
@@ -121,7 +126,7 @@ const AddClass = () => {
                     </div>
 
                     <button className="btn btn-outline w-full">
-                        Add Class<MdBookmarkAdded />
+                        Update Class<MdBookmarkAdded />
                     </button>
                 </form>
             </div>
@@ -130,4 +135,4 @@ const AddClass = () => {
     );
 };
 
-export default AddClass;
+export default UpdateClass;

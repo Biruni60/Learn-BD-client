@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import SectionTitle from "../../../Shared/SectionTitle";
 import { FaUsers } from "react-icons/fa";
-import { CgLaptop } from "react-icons/cg";
 import Swal from "sweetalert2";
 
 const AllUsers = () => {
@@ -34,7 +33,7 @@ const AllUsers = () => {
 
     return (
         <div>
-           <SectionTitle title="All Users"></SectionTitle> 
+           <SectionTitle title="ALL USERS"></SectionTitle> 
            <div className="overflow-x-auto">
   <div className=" border border-lime-600 py-10 px-2 rounded-lg my-16">
   <table className=" table ">

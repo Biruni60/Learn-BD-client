@@ -1,0 +1,235 @@
+[
+    {
+      "title": "Introduction to Algorithms",
+      "name": "MD. ABU RAIHAN AL BIRUNI",
+      "email": "teacher@bichar.com",
+      "price": 29.99,
+      "description": "A comprehensive introduction to fundamental algorithms.",
+      "image": "https://i.ibb.co/WN9PzXL/1672488938916.png"
+    },
+    {
+      "title": "Web Development Bootcamp",
+      "name": "MD. ABU RAIHAN AL BIRUNI",
+      "email": "teacher@bichar.com",
+      "price": 49.99,
+      "description": "Learn full-stack web development from scratch.",
+      "image": "https://i.ibb.co/f4MDSPG/download.jpg"
+    },
+    {
+      "title": "Database Design and Management",
+      "name": "MD. ABU RAIHAN AL BIRUNI",
+      "email": "teacher@bichar.com",
+      "price": 39.99,
+      "description": "Master the art of designing and managing databases.",
+      "image": "https://i.ibb.co/LPMY8r1/maxresdefault.jpg"
+    },
+    {
+      "title": "Machine Learning Fundamentals",
+      "name": "MD. ABU RAIHAN AL BIRUNI",
+      "email": "teacher@bichar.com",
+      "price": 59.99,
+      "description": "Explore the basics of machine learning algorithms.",
+      "image": "https://i.ibb.co/XWBxM75/maxresdefault-1.jpg"
+    },
+    {
+      "title": "Software Engineering Principles",
+      "name": "MD. ABU RAIHAN AL BIRUNI",
+      "email": "teacher@bichar.com",
+      "price": 19.99,
+      "description": "Understand the principles of software engineering.",
+      "image": "https://i.ibb.co/prp93Yg/download-1.jpg"
+    },
+    {
+      "title": "Cybersecurity Essentials",
+      "name": "MD. ABU RAIHAN AL BIRUNI",
+      "email": "teacher@bichar.com",
+      "price": 79.99,
+      "description": "Essential knowledge to secure computer systems.",
+      "image": "https://i.ibb.co/9WVVq2W/download.png"
+    },
+    {
+      "title": "Data Structures Mastery",
+      "name": "MD. ABU RAIHAN AL BIRUNI",
+      "email": "teacher@bichar.com",
+      "price": 34.99,
+      "description": "Master the implementation and usage of data structures.",
+      "image": "https://i.ibb.co/VW3v7qs/1-v-Eyx-M0-Uxk-Asagn0-4-ZJZg.png"
+    },
+    {
+      "title": "Mobile App Development with React Native",
+      "name": "MD. ABU RAIHAN AL BIRUNI",
+      "email": "teacher@bichar.com",
+      "price": 44.99,
+      "description": "Build cross-platform mobile apps using React Native.",
+      "image": "https://i.ibb.co/P9qqdjx/download-1.png"
+    },
+    {
+      "title": "Computer Networks Basics",
+      "name": "MD. ABU RAIHAN AL BIRUNI",
+      "email": "teacher@bichar.com",
+      "price": 24.99,
+      "description": "Fundamentals of computer networking and communication.",
+      "image": "https://i.ibb.co/xLHJmZX/1687847851706-Basic-concepts-of-computer-networks.jpg"
+    },
+    {
+      "title": "Artificial Intelligence Explained",
+      "name": "MD. ABU RAIHAN AL BIRUNI",
+      "email": "teacher@bichar.com",
+      "price": 69.99,
+      "description": "An overview of artificial intelligence and its applications.",
+      "image": "https://i.ibb.co/myvMjWt/images.jpg"
+    },
+    {
+      "title": "Advanced Java Programming",
+      "name": "MD. ABU RAIHAN AL BIRUNI",
+      "email": "teacher@bichar.com",
+      "price": 49.99,
+      "description": "Deep dive into advanced Java programming concepts.",
+      "image": "https://i.ibb.co/Lpcmbyj/maxresdefault-2.jpg"
+    },
+      {
+        "title": "Python for Data Science",
+        "name": "MD. ABU RAIHAN AL BIRUNI",
+        "email": "teacher@bichar.com",
+        "price": 39.99,
+        "description": "Learn Python programming for data analysis and visualization.",
+        "image": "https://i.ibb.co/Wt4h7RT/Python-for-Data-Science.png"
+      },
+      {
+        "title": "Cloud Computing Fundamentals",
+        "name": "MD. ABU RAIHAN AL BIRUNI",
+        "email": "teacher@bichar.com",
+        "price": 54.99,
+        "description": "Understand the basics of cloud computing and its applications.",
+        "image": "https://i.ibb.co/gyWwbJy/download-2.png"
+      },
+      {
+        "title": "Frontend Web Development with React",
+        "name": "MD. ABU RAIHAN AL BIRUNI",
+        "email": "teacher@bichar.com",
+        "price": 29.99,
+        "description": "Build interactive user interfaces with the React library.",
+        "image": "https://i.ibb.co/syDQmhW/52c99d1f-8e25-41e1-8334-f99563f6ac61.png"
+      },
+      {
+        "title": "Linux System Administration",
+        "name": "MD. ABU RAIHAN AL BIRUNI",
+        "email": "teacher@bichar.com",
+        "price": 44.99,
+        "description": "Master the skills needed to administer Linux-based systems.",
+        "image": "https://i.ibb.co/HFdF7tB/5d8dd7a40ef690769d10a7dd-Linux-System-Administrator.jpg"
+      },
+      {
+        "title": "Introduction to Cyber Forensics",
+        "name": "MD. ABU RAIHAN AL BIRUNI",
+        "email": "teacher@bichar.com",
+        "price": 49.99,
+        "description": "Explore the world of digital forensics and investigative techniques.",
+        "image": "https://i.ibb.co/mBqb3vG/Cyber-Forensics.jpg"
+      },
+      {
+        "title": "Blockchain Basics",
+        "name": "MD. ABU RAIHAN AL BIRUNI",
+        "email": "teacher@bichar.com",
+        "price": 34.99,
+        "description": "An introduction to blockchain technology and its applications.",
+        "image": "https://i.ibb.co/thTkGQz/download-2.jpg"
+      },
+      {
+        "title": "Data Science and Machine Learning in R",
+        "name": "MD. ABU RAIHAN AL BIRUNI",
+        "email": "teacher@bichar.com",
+        "price": 59.99,
+        "description": "Utilize R for statistical analysis, data visualization, and machine learning.",
+        "image": "https://i.ibb.co/G7Bq96j/81-LX1-ALr-Tk-S-AC-UL210-SR210-210.jpg"
+      },
+      {
+        "title": "Mobile App Security",
+        "name": "MD. ABU RAIHAN AL BIRUNI",
+        "email": "teacher@bichar.com",
+        "price": 49.99,
+        "description": "Learn best practices for securing mobile applications.",
+        "image": "https://i.ibb.co/n3rJCRH/download-3.jpg"
+      },
+      {
+        "title": "Computer Graphics and Visualization",
+        "name": "MD. ABU RAIHAN AL BIRUNI",
+        "email": "teacher@bichar.com",
+        "price": 39.99,
+        "description": "Explore the principles and techniques of computer graphics.",
+        "image": "https://i.ibb.co/3BsjK3Y/81-R7pq-Oo-YJS-AC-UF1000-1000-QL80.jpg"
+      },
+      {
+        "title": "Big Data Analytics with Hadoop",
+        "name": "MD. ABU RAIHAN AL BIRUNI",
+        "email": "teacher@bichar.com",
+        "price": 64.99,
+        "description": "Harness the power of Hadoop for processing and analyzing big data.",
+        "image": "https://i.ibb.co/ct065dk/Top-10-Hadoop-Analytics-Tools-For-Big-Data.png"
+      },
+      {
+        "title": "Software Testing and Quality Assurance",
+        "name": "MD. ABU RAIHAN AL BIRUNI",
+        "email": "teacher@bichar.com",
+        "price": 44.99,
+        "description": "Master the techniques of software testing and ensuring quality.",
+        "image": "https://i.ibb.co/47V3qv7/download-4.jpg"
+      },
+      {
+        "title": "Internet of Things (IoT) Fundamentals",
+        "name": "MD. ABU RAIHAN AL BIRUNI",
+        "email": "teacher@bichar.com",
+        "price": 34.99,
+        "description": "Introduction to the basics of IoT and its applications.",
+        "image": "https://i.ibb.co/t8B6FT5/download-5.jpg"
+      },
+      {
+        "title": "Full-Stack JavaScript Development",
+        "name": "MD. ABU RAIHAN AL BIRUNI",
+        "email": "teacher@bichar.com",
+        "price": 54.99,
+        "description": "Learn both frontend and backend JavaScript development.",
+        "image": "https://i.ibb.co/1mc0dFB/full-stack-javascript-developer.jpg"
+      },
+      {
+        "title": "Artificial Neural Networks",
+        "name": "MD. ABU RAIHAN AL BIRUNI",
+        "email": "teacher@bichar.com",
+        "price": 39.99,
+        "description": "Dive deep into the theory and applications of artificial neural networks.",
+        "image": "https://i.ibb.co/nfYTQ29/download-6.jpg"
+      },
+      {
+        "title": "Agile Software Development Practices",
+        "name": "MD. ABU RAIHAN AL BIRUNI",
+        "email": "teacher@bichar.com",
+        "price": 29.99,
+        "description": "Implement agile methodologies in software development.",
+        "image": "https://i.ibb.co/wJC4BWT/download-3.png"
+      },
+      {
+        "title": "Computer Vision Fundamentals",
+        "name": "MD. ABU RAIHAN AL BIRUNI",
+        "email": "teacher@bichar.com",
+        "price": 49.99,
+        "description": "An introduction to the principles of computer vision.",
+        "image": "https://i.ibb.co/4tPKMyw/Computer-Vision-Tutorial.webp"
+      },
+      {
+        "title": "Ethical Hacking and Penetration Testing",
+        "name": "MD. ABU RAIHAN AL BIRUNI",
+        "email": "teacher@bichar.com",
+        "price": 59.99,
+        "description": "Learn ethical hacking techniques and penetration testing.",
+        "image": "https://i.ibb.co/Kw7f77L/ethical-hacking-vs-penetration-testing.webp"
+      },
+      {
+        "title": "Angular Framework Essentials",
+        "name": "MD. ABU RAIHAN AL BIRUNI",
+        "email": "teacher@bichar.com",
+        "price": 44.99,
+        "description": "Master the essentials of the Angular framework for web development.",
+        "image": "https://i.ibb.co/cT6kdbt/download-7.jpg"
+      }
+  ]
+  

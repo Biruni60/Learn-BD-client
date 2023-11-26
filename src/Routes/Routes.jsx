@@ -12,10 +12,13 @@ import MyEnrollClass from "../DashBoard/StudentDashBoard/MyEnrollClass";
 import UserProfile from "../Shared/UserProfile";
 import TeacharHome from "../DashBoard/TeacharDashBoard/TeacharHome";
 import AddClass from "../DashBoard/TeacharDashBoard/AddClass";
-import MyClass from "../DashBoard/TeacharDashBoard/MyClass";
+
 import AdminHome from "../DashBoard/AdminDashBoard/AdminHome";
 import AllUsers from "../DashBoard/AdminDashBoard/AllUsers/AllUsers";
 import TeacherRequest from "../DashBoard/AdminDashBoard/TeacherRequest";
+import MyClass from "../DashBoard/TeacharDashBoard/Myclasses/MyClass";
+import UpdateClass from "../DashBoard/TeacharDashBoard/Myclasses/UpdateClass";
+import SeeDetails from "../DashBoard/TeacharDashBoard/Myclasses/SeeDetails/SeeDetails";
 
 export const router = createBrowserRouter([
     {
@@ -72,6 +75,15 @@ export const router = createBrowserRouter([
         path:"/dashboard/teacherProfile",
         element:<UserProfile></UserProfile>
       },
+      {
+        path:"/dashboard/updateClass/:id",
+        element:<UpdateClass></UpdateClass>
+      },
+      {
+        path:"/dashboard/seeDetails",
+        element:<SeeDetails></SeeDetails>
+      },
+      
       //admin
       {
         path:"/dashboard/adminhome",
