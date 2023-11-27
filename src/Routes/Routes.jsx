@@ -20,6 +20,10 @@ import MyClass from "../DashBoard/TeacharDashBoard/Myclasses/MyClass";
 import UpdateClass from "../DashBoard/TeacharDashBoard/Myclasses/UpdateClass";
 import SeeDetails from "../DashBoard/TeacharDashBoard/Myclasses/SeeDetails/SeeDetails";
 import AdminClasses from "../DashBoard/AdminDashBoard/AdminClasses/AdminClasses";
+import AllClasses from "../NavElement/AllClasses/AllClasses";
+import TeachOn from "../NavElement/TrachOn/TeachOn";
+import ClassDetail from "../NavElement/AllClasses/ClassDEtail";
+import Payment from "../PAYMENT/Payment";
 
 export const router = createBrowserRouter([
     {
@@ -38,6 +42,21 @@ export const router = createBrowserRouter([
         {
             path:"/signup",
             element:<SignUp></SignUp>
+        },
+        {
+          path:"/allclasses",
+          element:<AllClasses></AllClasses>
+        },
+        {
+          path:"/teachon",
+          element:<TeachOn></TeachOn>
+        },{
+          path:"/class/:id",
+          element:<ClassDetail></ClassDetail>
+        },
+        {
+          path:"/payment/:id",
+          element:<Payment></Payment>
         }
       ]
     },

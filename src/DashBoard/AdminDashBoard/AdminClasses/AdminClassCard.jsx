@@ -27,7 +27,7 @@ const AdminClassCard = ({classItem,refetch}) => {
             confirmButtonText: `Yes, ${item} it!`
         }).then(async (result) => {
             if (result.isConfirmed) {
-                const res = await axiosSecure.put(`/addclass/${_id}`,data);
+                const res = await axiosSecure.put(`/approveclass/${_id}`,data);
                 
                 if (res.data.modifiedCount > 0) {
                   

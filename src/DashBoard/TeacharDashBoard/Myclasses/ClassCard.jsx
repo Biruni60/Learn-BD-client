@@ -55,7 +55,7 @@ const ClassCard = ({classItem,refetch}) => {
         <p><span className="text-lg font-medium">Price: </span>${price}</p>
         <p><span className="text-lg font-medium">Status: </span>{isPending}</p>
     </div>
-    <div className="card-actions flex  flex-wrap  b justify-center gap-2 mt-4">
+    <div className="card-actions flex  flex-wrap   justify-center gap-2 mt-4">
       <button onClick={()=>handleDeleteItem(classItem)}  className="btn btn-outline uppercase">Delete</button>
      <Link to={`/dashboard/updateClass/${_id}`}> <button className="btn btn-outline uppercase">Update</button></Link>
       <button disabled={disable} className="btn btn-outline uppercase">See Details</button>
