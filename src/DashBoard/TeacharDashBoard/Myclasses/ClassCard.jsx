@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ClassCard = ({classItem,refetch}) => {
     const {_id,title,price,description,image,isPending,name,email}=classItem
     const [disable,setdisable]=useState(true);
+    const navigate=useNavigate()
     const axiosSecure=useAxiosSecure()
     useEffect(() => {
         if (isPending === "accepted") {
@@ -41,6 +42,9 @@ const ClassCard = ({classItem,refetch}) => {
             }
         });
     }
+    const handleNavigation=id=>{
+        navigate(`/dashboard/myclass/${id}`)
+    }
     return (
         <div className=" p-6 bg-black">
          <div className="card  bg-base-100 shadow-xl rounded-none">
@@ -58,7 +62,7 @@ const ClassCard = ({classItem,refetch}) => {
     <div className="card-actions flex  flex-wrap   justify-center gap-2 mt-4">
       <button onClick={()=>handleDeleteItem(classItem)}  className="btn btn-outline uppercase">Delete</button>
      <Link to={`/dashboard/updateClass/${_id}`}> <button className="btn btn-outline uppercase">Update</button></Link>
-      <button disabled={disable} className="btn btn-outline uppercase">See Details</button>
+      <button onClick={()=>handleNavigation(_id)} disabled={disable} className="btn btn-outline uppercase">See Details</button>
     </div>
   </div>
 </div>

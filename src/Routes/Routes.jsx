@@ -24,6 +24,7 @@ import AllClasses from "../NavElement/AllClasses/AllClasses";
 import TeachOn from "../NavElement/TrachOn/TeachOn";
 import ClassDetail from "../NavElement/AllClasses/ClassDEtail";
 import Payment from "../PAYMENT/Payment";
+import ClassDetailInfo from "../DashBoard/TeacharDashBoard/Myclasses/SeeDetails/ClassDetailInfo";
 
 export const router = createBrowserRouter([
     {
@@ -102,6 +103,10 @@ export const router = createBrowserRouter([
       {
         path:"/dashboard/seeDetails",
         element:<SeeDetails></SeeDetails>
+      },
+      {
+        path:"/dashboard/myclass/:id",
+        element:<ClassDetailInfo></ClassDetailInfo>
       },
       
       //admin
