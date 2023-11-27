@@ -25,6 +25,7 @@ import TeachOn from "../NavElement/TrachOn/TeachOn";
 import ClassDetail from "../NavElement/AllClasses/ClassDEtail";
 import Payment from "../PAYMENT/Payment";
 import ClassDetailInfo from "../DashBoard/TeacharDashBoard/Myclasses/SeeDetails/ClassDetailInfo";
+import MyEnrollClassDetail from "../DashBoard/StudentDashBoard/MyEnrollClassDetail";
 
 export const router = createBrowserRouter([
     {
@@ -77,6 +78,10 @@ export const router = createBrowserRouter([
       {
         path:"/dashboard/studentProfile",
         element:<UserProfile></UserProfile>
+      },
+      {
+        path:"/dashboard/myenrollclass/:id",
+        element:<MyEnrollClassDetail></MyEnrollClassDetail>
       },
       //teacher
       

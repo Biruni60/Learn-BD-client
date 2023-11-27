@@ -18,6 +18,9 @@ const CheckOutForm = ({classDetail}) => {
     const navigate = useNavigate();
 
     const price =classDetail?.price
+    const title=classDetail?.title
+    const name=classDetail?.name 
+    const image=classDetail?.image
     useEffect(() => {
         
             axiosSecure.post('/create-payment-intent', { price: price })
@@ -81,6 +84,9 @@ const CheckOutForm = ({classDetail}) => {
                     price: price,
                     transactionId: paymentIntent.id,
                     date: new Date(),
+                    title:title,
+                    name:name,
+                    image:image,
                     classId:classDetail._id
                 }
 
