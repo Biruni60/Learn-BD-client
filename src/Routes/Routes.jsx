@@ -21,7 +21,7 @@ import UpdateClass from "../DashBoard/TeacharDashBoard/Myclasses/UpdateClass";
 import SeeDetails from "../DashBoard/TeacharDashBoard/Myclasses/SeeDetails/SeeDetails";
 import AdminClasses from "../DashBoard/AdminDashBoard/AdminClasses/AdminClasses";
 import AllClasses from "../NavElement/AllClasses/AllClasses";
-import TeachOn from "../NavElement/TrachOn/TeachOn";
+import TeachOn from "../NavElement/TeachOn/TeachOn";
 import ClassDetail from "../NavElement/AllClasses/ClassDEtail";
 import Payment from "../PAYMENT/Payment";
 import ClassDetailInfo from "../DashBoard/TeacharDashBoard/Myclasses/SeeDetails/ClassDetailInfo";

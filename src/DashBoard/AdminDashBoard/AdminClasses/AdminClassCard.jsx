@@ -58,7 +58,7 @@ const AdminClassCard = ({classItem,refetch}) => {
     <p>{description}</p>
     
     <h2><span className="text-lg font-medium">Teacher Email: </span>{email}</h2>
-    <div className="card-actions flex  flex-wrap  b justify-center gap-2 mt-4">
+    <div className="card-actions flex  flex-wrap   justify-center gap-2 mt-4">
       <button onClick={()=>handleApprove("accepted")}  className="btn btn-outline uppercase">Accept</button>
       <button onClick={()=>handleApprove("rejected")}  className="btn btn-outline uppercase">Reject</button>
 
