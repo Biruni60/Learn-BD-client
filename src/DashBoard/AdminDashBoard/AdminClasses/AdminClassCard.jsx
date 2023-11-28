@@ -3,10 +3,11 @@ import Swal from "sweetalert2";
 
 
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { useNavigate } from "react-router-dom";
 
 const AdminClassCard = ({classItem,refetch}) => {
     const {_id,title,description,image,isPending,  email}=classItem
-   
+    const navigate=useNavigate()
     const axiosSecure=useAxiosSecure()
     const [disable, setdisable] = useState(true);
 
@@ -45,6 +46,9 @@ const AdminClassCard = ({classItem,refetch}) => {
             }
         });
     }
+    const handleNavigation=id=>{
+      navigate(`/dashboard/class/${id}`)
+  }
     return (
         <div className=" p-6 bg-black">
          <div className="card  bg-base-100 shadow-xl rounded-none">
@@ -58,7 +62,7 @@ const AdminClassCard = ({classItem,refetch}) => {
       <button onClick={()=>handleApprove("accepted")}  className="btn btn-outline uppercase">Accept</button>
       <button onClick={()=>handleApprove("rejected")}  className="btn btn-outline uppercase">Reject</button>
 
-      <button disabled={disable} className="btn btn-outline uppercase">See Progress</button>
+      <button onClick={()=>handleNavigation(_id)} disabled={disable} className="btn btn-outline uppercase">See Details</button>
     </div>
   </div>
 </div>

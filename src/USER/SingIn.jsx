@@ -47,6 +47,9 @@ const SingIn = () => {
                      toast("User LoggedIn Succesfully")
                      navigate(location.state? location.state:"/")
                   }
+                  if(res.data.message==='user already exists'){
+                    navigate(location.state? location.state:"/")
+                  }
                   
               })
            

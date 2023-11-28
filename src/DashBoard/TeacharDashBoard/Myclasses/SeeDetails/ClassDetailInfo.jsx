@@ -5,13 +5,31 @@ import { MdBookmarkAdded } from "react-icons/md";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import SectionTitle from "../../../../Shared/SectionTitle";
+import { useQuery } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
 
 
 const ClassDetailInfo = () => {
     const { register, handleSubmit, reset } = useForm();
     const {id}=useParams()
     console.log(id);
+     const[enrollment,setEnrollment]=useState(0)
+     const[submission,setSubmission]=useState(0)
+     const[assignment,setAssignment]=useState(0)
     const axiosSecure = useAxiosSecure();
+    const { data: detail = {} } = useQuery({
+      queryKey: ['detail'],
+      queryFn: async() => {
+          const res = await axiosSecure.get(`/teacher-stats/${id}`);
+          return res.data;
+      }
+  })     
+  console.log(detail);
+ useEffect(()=>{
+  setAssignment(detail?.assignment?.length || 0)
+  setEnrollment(detail?.enrollment?.length || 0)
+  setSubmission(detail?.submission?.length || 0)
+ },[detail])
     const onSubmit = async (data) => {
             const addClass={
                 title:data.title,
@@ -88,7 +106,7 @@ const ClassDetailInfo = () => {
            <div className="card  bg-lime-400 rounded-none">
   <div className="card-body">
     <h2 className="text-2xl font-bold text-center">Total Enrollment</h2>
-    <h2 className="text-2xl font-bold text-center">00</h2>
+    <h2 className="text-2xl font-bold text-center">{enrollment}</h2>
   </div>
 </div>
            </div>
@@ -96,7 +114,7 @@ const ClassDetailInfo = () => {
          <div className="card  bg-lime-400  rounded-none ">
   <div className="card-body">
     <h2 className="text-2xl font-bold text-center">Total Assignment</h2>
-    <h2 className="text-2xl font-bold text-center">00</h2>
+    <h2 className="text-2xl font-bold text-center">{assignment}</h2>
   </div>
 </div>
          </div>
@@ -104,7 +122,7 @@ const ClassDetailInfo = () => {
            <div className="card  bg-lime-400 rounded-none ">
   <div className="card-body">
     <h2 className="text-2xl font-bold text-center">Per Day Submission</h2>
-    <h2 className="text-2xl font-bold text-center">00</h2>
+    <h2 className="text-2xl font-bold text-center">{submission}</h2>
   </div>
 </div>
            </div>

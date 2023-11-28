@@ -26,6 +26,7 @@ import ClassDetail from "../NavElement/AllClasses/ClassDEtail";
 import Payment from "../PAYMENT/Payment";
 import ClassDetailInfo from "../DashBoard/TeacharDashBoard/Myclasses/SeeDetails/ClassDetailInfo";
 import MyEnrollClassDetail from "../DashBoard/StudentDashBoard/MyEnrollClassDetail";
+import AdminClass from "../DashBoard/AdminDashBoard/AdminClasses/AdminClass";
 
 export const router = createBrowserRouter([
     {
@@ -136,7 +137,10 @@ export const router = createBrowserRouter([
         path:"/dashboard/adminclasses",
         element:<AdminClasses></AdminClasses>
       },
-      
+      {
+        path:"/dashboard/class/:id",
+        element:<AdminClass></AdminClass>
+      }
       ]
     }
   ]);
