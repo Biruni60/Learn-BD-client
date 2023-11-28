@@ -3,9 +3,11 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import SectionTitle from "../../../Shared/SectionTitle";
 import { FaUsers } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { useEffect, useState } from "react";
 
 const AllUsers = () => {
      const axiosSecure=useAxiosSecure();
+    
      const{data:users=[],refetch}=useQuery({
         queryKey:['users'],
         queryFn:async ()=>{
@@ -13,7 +15,20 @@ const AllUsers = () => {
             return res.data;
         }
      })
-
+     
+const [userss,setUserss]=useState(users)
+  useEffect(()=>{
+    setUserss(users)
+  },[users])
+  
+         const handleSearch=(e)=>{
+         e.preventDefault();
+         const email=e.target.email.value
+         console.log(email);
+         axiosSecure.get(`/userprofile/${email}`)
+         .then(res=>setUserss([res.data]))
+         
+         }
      const handleMakeAdmin = user =>{
         axiosSecure.put(`/users/admin/${user._id}`)
         .then(res =>{
@@ -36,6 +51,12 @@ const AllUsers = () => {
            <SectionTitle title="ALL USERS"></SectionTitle> 
            <div className="overflow-x-auto">
   <div className=" border border-lime-600 py-10 px-2 rounded-lg my-16">
+ <div >
+  <form onSubmit={handleSearch} className="flex justify-center my-4">
+  <input type="text" name="email" placeholder="Type here" className="input input-bordered input-accent w-full max-w-xs rounded-r-none border-r-0 " />
+  <input type="submit" value="Search By Email" className="input input-bordered input-accent text-white bg-lime-600 rounded-l-none border-l-0 " />
+  </form>
+ </div>
   <table className=" table ">
     {/* head */}
     <thead className="text-lime-600">
@@ -49,7 +70,7 @@ const AllUsers = () => {
     </thead>
     <tbody>
       {
-        users.map((user,index)=> <tr key={user._id}>
+       userss&& userss.map((user,index)=> <tr key={user._id}>
         
         <th>
          {index+1}
