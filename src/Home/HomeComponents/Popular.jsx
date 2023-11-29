@@ -9,14 +9,14 @@ import "swiper/css/pagination";
 
 
 import { useQuery } from "@tanstack/react-query";
-import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
-// Defining the Popular component
+
 const Popular = () => {
-    // Using custom hooks and setting up axios with authentication
-    const axiosSecure = useAxiosSecure();
+    
+    const axiosPublic = useAxiosPublic();
 
-    // Configuring pagination for the Swiper
+
     const pagination = {
         clickable: true,
         renderBullet: function (index, className) {
@@ -24,19 +24,18 @@ const Popular = () => {
         },
     };
 
-    // Fetching popular courses data using react-query
+   
     const { data: items = [] } = useQuery({
         queryKey: ['items'],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/classes`);
+            const res = await axiosPublic.get(`/classes`);
             return res.data;
         }
     });
 
-    // Rendering the component
+
     return (
         <div>
-            {/* Displaying the section title */}
             <SectionTitle title="POPULAR COURSES"></SectionTitle>
 
             <div className="my-16">
@@ -63,5 +62,5 @@ const Popular = () => {
     );
 };
 
-// Exporting the Popular component
+
 export default Popular;

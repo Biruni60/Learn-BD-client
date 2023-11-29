@@ -8,12 +8,13 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../USER/AuthProvider";
+import useAxiosUpload from "../../Hooks/useAxiosUpload";
 
 
 
 const AddClass = () => {
     const { register, handleSubmit, reset } = useForm();
-    const axiosPublic = useAxiosPublic();
+    const axiosUpload = useAxiosUpload();
     const axiosSecure = useAxiosSecure();
     const {user}=useContext(AuthContext)
     const navigate=useNavigate()
@@ -21,7 +22,7 @@ const AddClass = () => {
     const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
     const onSubmit = async (data) => {
         const imageFile = { image: data.image[0] }
-        const res = await axiosPublic.post(image_hosting_api, imageFile, {
+        const res = await axiosUpload.post(image_hosting_api, imageFile, {
             headers: {
                 'content-type': 'multipart/form-data'
             }

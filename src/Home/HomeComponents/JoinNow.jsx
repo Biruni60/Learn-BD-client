@@ -12,7 +12,7 @@ const JoinNow = () => {
     <h2 className="card-title">BECOME A TEACHER</h2>
     <p>Instructors from around the world teach millions of learners on LEARNBD.We provide the tools and skills to teach what you love</p>
     <div className="card-actions justify-end">
-      <Link><button className="btn  btn-outline">Start Teaching Today</button></Link>
+      <Link to="/teachon"><button className="btn  btn-outline">Start Teaching Today</button></Link>
     </div>
   </div>
 </div>

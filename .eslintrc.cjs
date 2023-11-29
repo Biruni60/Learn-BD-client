@@ -15,7 +15,8 @@ module.exports = {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
+      {'no-unused-vars': 'off',}
     ],
-    'no-unused-vars': 'off',
+   
   },
 };

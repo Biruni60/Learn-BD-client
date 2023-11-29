@@ -1,10 +1,29 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
 
 
 const AllClassesCard = ({classItem}) => {
     const {_id,title,price,description,image,name,email}=classItem
     const [enrollment,setEnrollment]=useState(0)
+    const axiosSecure = useAxiosSecure();
+    const { data: details,refetch } = useQuery({
+      queryKey: ['details',_id],
+      queryFn: async() => {
+          const res = await axiosSecure.get(`/class-stats/${_id}`);
+          return res.data;
+      }
+  })     
+
+  console.log(details);
+ useEffect(()=>{
+ 
+  setEnrollment(details?.length || 0)
+
+ },[details,refetch])
+  
     return (
         <div className=" p-6 bg-black">
         <div className="card  bg-base-100 shadow-xl rounded-none">

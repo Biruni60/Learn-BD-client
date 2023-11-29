@@ -27,6 +27,9 @@ import Payment from "../PAYMENT/Payment";
 import ClassDetailInfo from "../DashBoard/TeacharDashBoard/Myclasses/SeeDetails/ClassDetailInfo";
 import MyEnrollClassDetail from "../DashBoard/StudentDashBoard/MyEnrollClassDetail";
 import AdminClass from "../DashBoard/AdminDashBoard/AdminClasses/AdminClass";
+import PrivateRoute from "./PrivateRoute";
+import AdminRoute from "./AdminRoute";
+import TeacherRoute from "./TeacherRoute";
 
 export const router = createBrowserRouter([
     {
@@ -52,94 +55,94 @@ export const router = createBrowserRouter([
         },
         {
           path:"/teachon",
-          element:<TeachOn></TeachOn>
+          element:<PrivateRoute><TeachOn></TeachOn></PrivateRoute>
         },{
           path:"/class/:id",
-          element:<ClassDetail></ClassDetail>
+          element:<PrivateRoute><ClassDetail></ClassDetail></PrivateRoute>
         },
         {
           path:"/payment/:id",
-          element:<Payment></Payment>
+          element:<PrivateRoute><Payment></Payment></PrivateRoute>
         }
       ]
     },
     {
       path:"dashboard",
-      element:<DashBoard></DashBoard>,
+      element:<PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
       children:[
       //student routes
       {
         path:"/dashboard/studenthome",
-        element:<StudentHome></StudentHome>
+        element:<PrivateRoute><StudentHome></StudentHome></PrivateRoute>
       },
       {
         path:"/dashboard/myenrollclasses",
-        element:<MyEnrollClass></MyEnrollClass>
+        element:<PrivateRoute><MyEnrollClass></MyEnrollClass></PrivateRoute>
       },
       {
         path:"/dashboard/studentProfile",
-        element:<UserProfile></UserProfile>
+        element:<PrivateRoute><UserProfile></UserProfile></PrivateRoute>
       },
       {
         path:"/dashboard/myenrollclass/:id",
-        element:<MyEnrollClassDetail></MyEnrollClassDetail>
+        element:<PrivateRoute><MyEnrollClassDetail></MyEnrollClassDetail></PrivateRoute>
       },
       //teacher
       
       {
         path:"/dashboard/teacherhome",
-        element:<TeacharHome></TeacharHome>
+        element:<TeacherRoute><TeacharHome></TeacharHome></TeacherRoute>
       },
       {
         path:"/dashboard/addclasses",
-        element:<AddClass></AddClass>
+        element:<TeacherRoute><AddClass></AddClass></TeacherRoute>
       },
       {
         path:"/dashboard/myclasses",
-        element:<MyClass></MyClass>
+        element:<TeacherRoute><MyClass></MyClass></TeacherRoute>
       },
       {
         path:"/dashboard/teacherProfile",
-        element:<UserProfile></UserProfile>
+        element:<TeacherRoute><UserProfile></UserProfile></TeacherRoute>
       },
       {
         path:"/dashboard/updateClass/:id",
-        element:<UpdateClass></UpdateClass>
+        element:<TeacherRoute><UpdateClass></UpdateClass></TeacherRoute>
       },
       {
         path:"/dashboard/seeDetails",
-        element:<SeeDetails></SeeDetails>
+        element:<TeacherRoute><SeeDetails></SeeDetails></TeacherRoute>
       },
       {
         path:"/dashboard/myclass/:id",
-        element:<ClassDetailInfo></ClassDetailInfo>
+        element:<TeacherRoute><ClassDetailInfo></ClassDetailInfo></TeacherRoute>
       },
       
       //admin
       {
         path:"/dashboard/adminhome",
-        element:<AdminHome></AdminHome>
+        element:<AdminRoute><AdminHome></AdminHome></AdminRoute>
       },
       {
         path:"/dashboard/allusers",
-        element:<AllUsers></AllUsers>
+        element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
       },
       {
         path:"/dashboard/teacherrequests",
-        element:<TeacherRequest></TeacherRequest>
+        element:<AdminRoute><TeacherRequest></TeacherRequest></AdminRoute>
       },
       
       {
         path:"/dashboard/adminProfile",
-        element:<UserProfile></UserProfile>
+        element:<AdminRoute><UserProfile></UserProfile></AdminRoute>
       },
       {
         path:"/dashboard/adminclasses",
-        element:<AdminClasses></AdminClasses>
+        element:<AdminRoute><AdminClasses></AdminClasses></AdminRoute>
       },
       {
         path:"/dashboard/class/:id",
-        element:<AdminClass></AdminClass>
+        element:<AdminRoute><AdminClass></AdminClass> </AdminRoute>
       }
       ]
     }

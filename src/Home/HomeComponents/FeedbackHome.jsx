@@ -4,15 +4,16 @@ import "swiper/css";
 import "swiper/css/navigation";
 import ReactStars from "react-rating-stars-component";
 import { useQuery } from "@tanstack/react-query";
-import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import SectionTitle from "../../Shared/SectionTitle";
+import useAxiosPublic from './../../Hooks/useAxiosPublic';
 const FeedbackHome = () => {
-    const axiosSecure = useAxiosSecure();
+   
+    const axiosPublic = useAxiosPublic();
     const { data: reviews = [] } = useQuery({
         queryKey: ['reviews'],
        
         queryFn: async() => {
-            const res = await axiosSecure.get(`/feedback`);
+            const res = await axiosPublic.get(`/feedback`);
             return res.data;
         }
     })     

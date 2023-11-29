@@ -2,7 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import SectionTitle from "../../Shared/SectionTitle";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import AllClassesCard from "./AllClassesCard";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
 
 
 const AllClasses = () => {
@@ -29,7 +31,7 @@ const AllClasses = () => {
 </div>
         </div>
         <SectionTitle title="OFFERED CLASSES"></SectionTitle>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10" data-aos="fade-up-right">
             {
             classes.map(classItem=> <AllClassesCard key={classItem._id} classItem={classItem} ></AllClassesCard>)
             }

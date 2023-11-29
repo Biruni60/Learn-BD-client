@@ -10,6 +10,7 @@ import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { AuthContext } from "../../../USER/AuthProvider";
 import SectionTitle from "../../../Shared/SectionTitle";
+import useAxiosUpload from "../../../Hooks/useAxiosUpload";
 
 
 
@@ -17,7 +18,7 @@ const UpdateClass = () => {
     const { register, handleSubmit, reset } = useForm();
     const {id} =useParams()
    
-    const axiosPublic = useAxiosPublic();
+    const axiosUpload = useAxiosUpload();
     const axiosSecure = useAxiosSecure();
     const {user}=useContext(AuthContext)
     const navigate=useNavigate()
@@ -25,7 +26,7 @@ const UpdateClass = () => {
     const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
     const onSubmit = async (data) => {
         const imageFile = { image: data.image[0] }
-        const res = await axiosPublic.post(image_hosting_api, imageFile, {
+        const res = await axiosUpload.post(image_hosting_api, imageFile, {
             headers: {
                 'content-type': 'multipart/form-data'
             }
