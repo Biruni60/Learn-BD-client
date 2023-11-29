@@ -17,7 +17,7 @@ const ClassDetailInfo = () => {
      const[submission,setSubmission]=useState(0)
      const[assignment,setAssignment]=useState(0)
     const axiosSecure = useAxiosSecure();
-    const { data: detail = {} } = useQuery({
+    const { data: detail = {},refetch } = useQuery({
       queryKey: ['detail'],
       queryFn: async() => {
           const res = await axiosSecure.get(`/teacher-stats/${id}`);
@@ -29,6 +29,7 @@ const ClassDetailInfo = () => {
   setAssignment(detail?.assignment?.length || 0)
   setEnrollment(detail?.enrollment?.length || 0)
   setSubmission(detail?.submission?.length || 0)
+ 
  },[detail])
     const onSubmit = async (data) => {
             const addClass={
@@ -39,6 +40,7 @@ const ClassDetailInfo = () => {
             }
             const classes=await axiosSecure.post('/addassignments',addClass)
             if(classes.data.insertedId){
+              refetch()
                 reset();
                 Swal.fire({
                     position: "top-end",

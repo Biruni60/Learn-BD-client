@@ -24,6 +24,13 @@ const MyEnrollClassDetail = () => {
             return res.data;
         }
     })     
+    const { data: classItem = [] } = useQuery({
+        queryKey: ['classItem'],
+        queryFn: async() => {
+            const res = await axiosSecure.get(`/classdetail/${id}`);
+            return res.data;
+        }
+    })     
 console.log(myassignments);
     const onSubmit = async (data) => {
             const addEvaluation={
@@ -31,7 +38,8 @@ console.log(myassignments);
                ratings:value,
                classId:id,
                name:user?.displayName,
-               image:user?.photoURL
+               image:user?.photoURL,
+               title:classItem?.title
             }
             const classes=await axiosSecure.post('/evaluation',addEvaluation)
             if(classes.data.insertedId){
