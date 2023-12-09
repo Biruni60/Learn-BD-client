@@ -2,14 +2,16 @@ Website Name:LearnBd
 
 Live link:https://learnbd-88548.web.app/
 
+This is a learning platform where student and teacher can interact with each other.
+
 Feature:
 
-1.user can erroll our courses
+- user can erroll our courses
 
-2.teachar can add courses.
+- teachar can add courses.
 
-3.teacher can assign assignment to the student
+- teacher can assign assignment to the student
 
-4.user can submit assignments
+- user can submit assignments
 
-5.user can eavluate the teacher
+- user can eavluate the teacher
